@@ -1,0 +1,3 @@
+# maggie
+
+Openings trainer

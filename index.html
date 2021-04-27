@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Maggie</title>
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js" integrity="sha384-s3XgLpvmHyscVpijnseAmye819Ee3yaGa8NxstkJVyA6nuDFjt59u1QvuEl/mecz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+.white-1e1d7 {
+    background-color:#ffffff;
+    color:#000000;
+}
+
+.black-3c85d {
+    background-color:#9370db;
+    color:#ffffff;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="display-3">maggie</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="myBoard" style="height:400px"></div>
+                <p id="moveText" style="text-align:center;"></p>
+                <p id="fenText" style="text-align:center;"></p>
+            </div>
+            <div class="col-md-3">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="d4, e4" id="moveTooltip">Possible Moves</a>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" value="" id="forceOpenings">
+
+                    <label for="forceOpenings" class="form-check-label">
+                        Force Openings
+                    </label>
+                </div>
+
+                <div class="btn">
+                    <i class="material-icons" id="takeback">chevron_left</i>
+                </div>
+                <div class="btn">
+                    <i class="material-icons" id="flip">
+                        swap_vert
+                    </i>
+                </div>
+                <div class="btn btn-danger" id="resetPosition">
+                    Reset Position
+                </div>
+
+                <div style="max-height:500px;overflow-y:scroll;">
+                    <table class="table" id="moves"></table>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4>Select Openings</h4>
+                <div id="openingSelection"></div>
+            </div>
+        </div>
+    </div>
+    <script src="stockfish.js"></script>
+    <script src="maggie.js"></script>
+</body>
+</html>
