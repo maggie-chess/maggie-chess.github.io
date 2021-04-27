@@ -2,6 +2,7 @@ var board = null
 var game = new Chess()
 var whiteSquareGrey = '#cbcbcb'
 var blackSquareGrey = '#9932cc'
+var engineDepth = 15
 
 var stockfish = STOCKFISH()
 var stockfishOutput = []
@@ -115,7 +116,7 @@ function getNextMoves() {
 function updateEngine() {
     let fen = game.fen()
     stockfish.postMessage(`position fen ${fen}`)
-    stockfish.postMessage('go depth 18')
+    stockfish.postMessage(`go depth ${engineDepth}`)
 }
 
 function updatePgn() {
